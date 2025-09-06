@@ -1,7 +1,13 @@
----
-title: Developer Guides
-description: Our community-written developer guides cover everything from setting up your development environment to advanced topics like rendering and networking.
----
+// Make a set of all api modules we wish to use
+setOf(
+    "fabric-api-base",
+    "fabric-command-api-v1",
+    "fabric-lifecycle-events-v1",
+    "fabric-networking-api-v1"
+).forEach {
+    // Add each module as a dependency
+    modImplementation(fabricApi.module(it, FABRIC_API_VERSION))
+}
 
 Written by the community, these guides cover a wide range of topics, from setting up your development environment to more advanced areas like rendering and networking.
 
